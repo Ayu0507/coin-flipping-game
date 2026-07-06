@@ -18,6 +18,12 @@
    
    console.log(computerMove);
   }
+
+  let score = {
+    wins : 0,
+    losses : 0
+  }
+
 </script>
 <body>
  
@@ -28,7 +34,15 @@
    }else if (computerMove === 'Tails'){
     result = 'You lose.';
    }
-   alert(`You picked heads. Computer picked ${computerMove}. ${result}`);
+   
+   if(computerMove === 'Heads'){
+    score.wins += 1;
+   }else if (computerMove === 'Tails'){
+     score.losses += 1;
+   }
+
+   alert(`You picked heads. Computer picked ${computerMove}. ${result}.
+Wins : ${score.wins}, Losses : ${score.losses}`);
     ">Heads</button>
 
   <button onclick="
@@ -38,8 +52,21 @@
    }else if (computerMove === 'Tails'){
     result = 'You win.';
    }
-   alert(`You picked tails. Computer picked ${computerMove}. ${result}`);
+
+    if(computerMove === 'Tails'){
+    score.wins += 1;
+   }else if (computerMove === 'Heads'){
+     score.losses += 1;
+   }
+
+   alert(`You picked tails. Computer picked ${computerMove}. ${result}
+Wins : ${score.wins}, Losses : ${score.losses}`);
     ">Tails</button>
+
+    <button onclick="
+    alert(`You picked tails. Computer picked ${computerMove}. ${result}
+Wins : ${score.wins = 0}, Losses : ${score.losses = 0}`);
+  ">Reset Score</button>
 
 </body>
 </html>
